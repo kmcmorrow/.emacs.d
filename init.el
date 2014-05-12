@@ -1,4 +1,4 @@
-(custom-set-variables
+﻿(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
@@ -14,6 +14,7 @@
  '(js2-basic-offset 2)
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
+ '(scss-compile-at-save nil)
  '(show-paren-mode t)
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify))))
 (custom-set-faces
@@ -30,13 +31,12 @@
  '(js2-warning ((t (:underline (:color "navajo white" :style wave)))))
  '(show-paren-match ((t (:background "deep sky blue")))))
 
-; size and position
+																				; size and position
 (set-frame-height (selected-frame) 52)
 (set-frame-position (selected-frame) 80 0)
 
 (setq visible-bell t)
 (setq inhibit-startup-screen t)
-;(set-default-font "Source Code Pro")
 (setq default-tab-width 2)
 (setq column-number-mode t)
 (setq scroll-error-top-bottom t)
@@ -47,12 +47,10 @@
 
 (require 'package)
 (add-to-list 'package-archives
-			 '("marmalade" . "http://marmalade-repo.org/packages/"))
+						 '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 (autoload 'company-mode "company" nil t)
-;;(define-key company-mode-map "\C-p" 'company-select-previous)
-;;(define-key company-mode-map "\C-n" 'company-select-next)
 (setq company-idle-delay 0.1)
 (setq company-minimum-prefix-length 2)
 
@@ -60,68 +58,54 @@
 (yas-global-mode 1)
 
 (require 'flymake-easy)
-
 (require 'flymake-jshint)
 (global-set-key [f10] 'flymake-goto-prev-error)
 (global-set-key [f11] 'flymake-goto-next-error)
 
-
-
-
 (add-hook 'js2-mode-hook 'company-mode)
-
 
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-hook 'js2-mode-hook
-		  (lambda ()
-			(define-key js2-mode-map (kbd "<f9>") 'js2-next-error)
-			(flymake-mode 1)))
+					(lambda ()
+						(define-key js2-mode-map (kbd "<f9>") 'js2-next-error)
+						(flymake-mode 1)))
 
-;(global-set-key [f9] 'js2-next-error)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; nodejs
 (setq exec-path (append exec-path '("~/.emacs.d")))
 (require 'js-comint)
 (setq inferior-js-program-command "node_emacs.bat")
 (add-hook 'js2-mode-hook
-		  '(lambda () 
-			 (local-set-key "\C-x\C-e" 'js-send-last-sexp)
-			 (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
-			 (local-set-key "\C-cb" 'js-send-buffer)
-			 (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
-			 (local-set-key "\C-cl" 'js-load-file-and-go)
-			 ))
+					'(lambda ()
+						 (local-set-key "\C-x\C-e" 'js-send-last-sexp)
+						 (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
+						 (local-set-key "\C-cb" 'js-send-buffer)
+						 (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
+						 (local-set-key "\C-cl" 'js-load-file-and-go)
+						 ))
 
-;(add-to-list 'load-path "~/path/to/js-comint")
-;(require 'js-comint)
-;; Use node as our repl
-;(setq inferior-js-program-command "node")
- 
-;(setq inferior-js-mode-hook
-;      (lambda ()
-        ;; We like nice colors
-;        (ansi-color-for-comint-mode-on)
-        ;; Deal with some prompt nonsense
-;        (add-to-list 'comint-preoutput-filter-functions
-;                     (lambda (output)
-;                       (replace-regexp-in-string ".*1G\.\.\..*5G" "..."
-;                     (replace-regexp-in-string ".*1G.*3G" "&gt;" output))))
-;;(setenv "NODE_NO_READLINE" "1")
-
+;; ruby
+(unless (package-installed-p 'inf-ruby)
+	(package-install 'inf-ruby))
 
 (add-hook 'inf-ruby-mode-hook (lambda () (require 'company-inf-ruby)))
 (add-hook 'ruby-mode-hook 'company-mode)
+(add-hook 'ruby-mode-hook 'ruby-tools-mode)
+(add-hook 'ruby-mode-hook 'ruby-end-mode)
+
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
 
 
-;; load a package
+;; ido-mode
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
 ;; tell emacs where to look
 ; (add-to-list 'load-path "~/.emacs.d/")
-;; load the package named xyz
-; (load "xyz")
-;; setup files ending in ".js" to open in js2-mode
-; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 ;; using multiple files
 ; (load "~/.emacs.d/emacs_init_1")
 ; (load "~/.emacs.d/emacs_init_2")
