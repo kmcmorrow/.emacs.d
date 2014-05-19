@@ -6,6 +6,7 @@
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(backup-directory-alist (quote (("." . "~/.saves"))))
  '(column-number-mode t)
+ '(css-indent-offset 2)
  '(custom-enabled-themes (quote (tsdh-dark)))
  '(display-time-mode t)
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
@@ -48,6 +49,8 @@
 (require 'package)
 (add-to-list 'package-archives
 						 '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+						 '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
 (autoload 'company-mode "company" nil t)
@@ -109,3 +112,6 @@
 ;; using multiple files
 ; (load "~/.emacs.d/emacs_init_1")
 ; (load "~/.emacs.d/emacs_init_2")
+
+;(require 'yaml-mode)
+;(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
