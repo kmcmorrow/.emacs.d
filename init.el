@@ -32,7 +32,8 @@
  '(show-paren-match ((t (:background "deep sky blue")))))
 
 ; size and position
-(set-frame-height (selected-frame) 52)
+;(set-frame-height (selected-frame) 52)
+(set-frame-height (selected-frame) 34) ;; laptop
 (set-frame-position (selected-frame) 80 0)
 
 (setq visible-bell t)
@@ -109,4 +110,3 @@
 ;; using multiple files
 ; (load "~/.emacs.d/emacs_init_1")
 ; (load "~/.emacs.d/emacs_init_2")
-
