@@ -1,4 +1,4 @@
-﻿﻿(custom-set-variables
+﻿(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
@@ -32,8 +32,8 @@
  '(show-paren-match ((t (:background "deep sky blue")))))
 
 ; size and position
-;(set-frame-height (selected-frame) 52)
-(set-frame-height (selected-frame) 34) ;; laptop
+;;(set-frame-height (selected-frame) 52)
+(set-frame-height (selected-frame) 34) ; laptop
 (set-frame-position (selected-frame) 80 0)
 
 (setq visible-bell t)
