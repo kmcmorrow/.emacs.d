@@ -1,4 +1,4 @@
-﻿(custom-set-variables
+(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
@@ -94,12 +94,14 @@
 (add-hook 'inf-ruby-mode-hook (lambda () (require 'company-inf-ruby)))
 (add-hook 'ruby-mode-hook 'company-mode)
 (add-hook 'ruby-mode-hook 'ruby-tools-mode)
-(add-hook 'ruby-mode-hook 'ruby-end-mode)
+;(add-hook 'ruby-mode-hook 'ruby-end-mode)
 
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
+
+(add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
 
 
 ;; ido-mode
@@ -115,3 +117,41 @@
 
 ;(require 'yaml-mode)
 ;(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+(auto-fill-mode -1)
+
+;; smartparens
+(require 'smartparens-config)
+(require 'smartparens-ruby)
+(smartparens-global-mode)
+(show-smartparens-global-mode t)
+
+
+;;
+;; ace jump mode major function
+;;
+;;(add-to-list 'load-path "/full/path/where/ace-jump-mode.el/in/")
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
+;; you can select the key you prefer to
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+;;
+;; enable a more powerful jump back function from ace jump mode
+;;
+(autoload
+  'ace-jump-mode-pop-mark
+  "ace-jump-mode"
+  "Ace jump back:-)"
+  t)
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+
+;;If you use viper mode :
+;;(define-key viper-vi-global-user-map (kbd "SPC") 'ace-jump-mode)
+;;If you use evil
+;;(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
