@@ -32,8 +32,9 @@
  '(js2-warning ((t (:underline (:color "navajo white" :style wave)))))
  '(show-paren-match ((t (:background "deep sky blue")))))
 
-																				; size and position
-(set-frame-height (selected-frame) 52)
+;; size and position
+(set-frame-height (selected-frame) 52) ; desktop
+;;(set-frame-height (selected-frame) 34) ; laptop
 (set-frame-position (selected-frame) 80 0)
 
 (setq visible-bell t)
@@ -42,15 +43,14 @@
 (setq column-number-mode t)
 (setq scroll-error-top-bottom t)
 
-(setq py-python-command "c:/Python27/python.exe")
-
-(setenv "PATH" (concat "~/npm/node_modules" (getenv "PATH")))
+;(setq py-python-command "c:/Python27/python.exe")
+;(setenv "PATH" (concat "~/npm/node_modules" (getenv "PATH")))
 
 (require 'package)
 (add-to-list 'package-archives
-						 '("marmalade" . "http://marmalade-repo.org/packages/"))
+	     '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-						 '("melpa" . "http://melpa.milkbox.net/packages/"))
+	     '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
 (autoload 'company-mode "company" nil t)
@@ -70,39 +70,36 @@
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-hook 'js2-mode-hook
-					(lambda ()
-						(define-key js2-mode-map (kbd "<f9>") 'js2-next-error)
-						(flymake-mode 1)))
+	  (lambda ()
+	    (define-key js2-mode-map (kbd "<f9>") 'js2-next-error)
+	    (flymake-mode 1)))
 
 ;; nodejs
 (setq exec-path (append exec-path '("~/.emacs.d")))
 (require 'js-comint)
 (setq inferior-js-program-command "node_emacs.bat")
 (add-hook 'js2-mode-hook
-					'(lambda ()
-						 (local-set-key "\C-x\C-e" 'js-send-last-sexp)
-						 (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
-						 (local-set-key "\C-cb" 'js-send-buffer)
-						 (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
-						 (local-set-key "\C-cl" 'js-load-file-and-go)
-						 ))
+	  '(lambda ()
+	     (local-set-key "\C-x\C-e" 'js-send-last-sexp)
+	     (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
+	     (local-set-key "\C-cb" 'js-send-buffer)
+	     (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
+	     (local-set-key "\C-cl" 'js-load-file-and-go)
+	     ))
 
 ;; ruby
 (unless (package-installed-p 'inf-ruby)
-	(package-install 'inf-ruby))
+  (package-install 'inf-ruby))
 
 (add-hook 'inf-ruby-mode-hook (lambda () (require 'company-inf-ruby)))
 (add-hook 'ruby-mode-hook 'company-mode)
 (add-hook 'ruby-mode-hook 'ruby-tools-mode)
-;(add-hook 'ruby-mode-hook 'ruby-end-mode)
 
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
-
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
-
 
 ;; ido-mode
 (setq ido-enable-flex-matching t)
@@ -125,7 +122,6 @@
 (require 'smartparens-ruby)
 (smartparens-global-mode)
 (show-smartparens-global-mode t)
-
 
 ;;
 ;; ace jump mode major function
@@ -150,8 +146,3 @@
 (eval-after-load "ace-jump-mode"
   '(ace-jump-mode-enable-mark-sync))
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
-
-;;If you use viper mode :
-;;(define-key viper-vi-global-user-map (kbd "SPC") 'ace-jump-mode)
-;;If you use evil
-;;(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
