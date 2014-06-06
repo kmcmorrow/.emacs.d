@@ -53,53 +53,8 @@
 	     '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
-(autoload 'company-mode "company" nil t)
-(setq company-idle-delay 0.1)
-(setq company-minimum-prefix-length 2)
-
 (require 'yasnippet)
 (yas-global-mode 1)
-
-(require 'flymake-easy)
-(require 'flymake-jshint)
-(global-set-key [f10] 'flymake-goto-prev-error)
-(global-set-key [f11] 'flymake-goto-next-error)
-
-(add-hook 'js2-mode-hook 'company-mode)
-
-(autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(add-hook 'js2-mode-hook
-	  (lambda ()
-	    (define-key js2-mode-map (kbd "<f9>") 'js2-next-error)
-	    (flymake-mode 1)))
-
-;; nodejs
-(setq exec-path (append exec-path '("~/.emacs.d")))
-(require 'js-comint)
-(setq inferior-js-program-command "node_emacs.bat")
-(add-hook 'js2-mode-hook
-	  '(lambda ()
-	     (local-set-key "\C-x\C-e" 'js-send-last-sexp)
-	     (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
-	     (local-set-key "\C-cb" 'js-send-buffer)
-	     (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
-	     (local-set-key "\C-cl" 'js-load-file-and-go)
-	     ))
-
-;; ruby
-(unless (package-installed-p 'inf-ruby)
-  (package-install 'inf-ruby))
-
-(add-hook 'inf-ruby-mode-hook (lambda () (require 'company-inf-ruby)))
-(add-hook 'ruby-mode-hook 'company-mode)
-(add-hook 'ruby-mode-hook 'ruby-tools-mode)
-
-(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
 
 ;; ido-mode
 (setq ido-enable-flex-matching t)
@@ -108,41 +63,14 @@
 
 ;; tell emacs where to look
 ; (add-to-list 'load-path "~/.emacs.d/")
-;; using multiple files
-; (load "~/.emacs.d/emacs_init_1")
-; (load "~/.emacs.d/emacs_init_2")
 
 ;(require 'yaml-mode)
 ;(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 (auto-fill-mode -1)
 
-;; smartparens
-(require 'smartparens-config)
-(require 'smartparens-ruby)
-(smartparens-global-mode)
-(show-smartparens-global-mode t)
-
-;;
-;; ace jump mode major function
-;;
-;;(add-to-list 'load-path "/full/path/where/ace-jump-mode.el/in/")
-(autoload
-  'ace-jump-mode
-  "ace-jump-mode"
-  "Emacs quick move minor mode"
-  t)
-;; you can select the key you prefer to
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-
-;;
-;; enable a more powerful jump back function from ace jump mode
-;;
-(autoload
-  'ace-jump-mode-pop-mark
-  "ace-jump-mode"
-  "Ace jump back:-)"
-  t)
-(eval-after-load "ace-jump-mode"
-  '(ace-jump-mode-enable-mark-sync))
-(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+(load "~/.emacs.d/setup-company.el")
+(load "~/.emacs.d/setup-js.el")
+(load "~/.emacs.d/setup-ruby.el")
+(load "~/.emacs.d/setup-ace-jump-mode.el")
+(load "~/.emacs.d/setup-smartparens.el")
