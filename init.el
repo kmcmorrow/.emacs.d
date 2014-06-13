@@ -73,4 +73,10 @@
 (load "~/.emacs.d/setup-js.el")
 (load "~/.emacs.d/setup-ruby.el")
 (load "~/.emacs.d/setup-ace-jump-mode.el")
-(load "~/.emacs.d/setup-smartparens.el")
+;;(load "~/.emacs.d/setup-smartparens.el")
+
+;; smartparens
+(require 'smartparens-config)
+;(require 'smartparens-ruby)
+(smartparens-global-mode)
+(show-smartparens-global-mode t)

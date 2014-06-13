@@ -1,5 +1,5 @@
 ;; smartparens
 (require 'smartparens-config)
-(require 'smartparens-ruby)
+;(require 'smartparens-ruby)
 (smartparens-global-mode)
 (show-smartparens-global-mode t)
