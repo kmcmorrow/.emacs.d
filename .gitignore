@@ -3,4 +3,4 @@ ede-projects.el
 auto-save-list/
 eshell/
 url/
-elpa/archives/
+elpa/*-readme.txt
