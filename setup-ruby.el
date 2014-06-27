@@ -5,6 +5,7 @@
 (add-hook 'inf-ruby-mode-hook (lambda () (require 'company-inf-ruby)))
 (add-hook 'ruby-mode-hook 'company-mode)
 (add-hook 'ruby-mode-hook 'ruby-tools-mode)
+(add-hook 'ruby-mode-hook 'rinari-minor-mode)
 
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
