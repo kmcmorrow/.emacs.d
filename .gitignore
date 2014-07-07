@@ -4,3 +4,6 @@ auto-save-list/
 eshell/
 url/
 elpa/*-readme.txt
+elpa/archives/gnu/archive-contents
+elpa/archives/marmalade/archive-contents
+elpa/archives/melpa/archive-contents
