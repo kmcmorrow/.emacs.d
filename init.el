@@ -83,3 +83,5 @@
 ;(require 'smartparens-ruby)
 (smartparens-global-mode)
 (show-smartparens-global-mode t)
+
+(global-set-key [f5] 'revert-buffer)
