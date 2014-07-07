@@ -15,11 +15,12 @@
  '(help-at-pt-timer-delay 0.9)
  '(js2-allow-keywords-as-property-names nil)
  '(js2-basic-offset 2)
- '(line-number-mode nil)
+ '(line-number-mode t)
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scss-compile-at-save nil)
  '(show-paren-mode t)
+ '(size-indication-mode nil)
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -33,6 +34,8 @@
  '(js2-error ((t (:foreground "red" :underline (:color "red" :style wave)))) t)
  '(js2-external-variable ((t (:background "firebrick" :foreground "orange"))) t)
  '(js2-warning ((t (:underline (:color "navajo white" :style wave)))) t)
+ '(mode-line ((t (:background "gray16" :foreground "sky blue" :box nil :family "DejaVu Sans"))))
+ '(mode-line-highlight ((t (:background "black" :box (:line-width 1 :color "white smoke")))))
  '(show-paren-match ((t (:background "deep sky blue")))))
 
 ;; size and position
@@ -76,6 +79,7 @@
 (load "~/.emacs.d/setup-js.el")
 (load "~/.emacs.d/setup-ruby.el")
 (load "~/.emacs.d/setup-ace-jump-mode.el")
+(load "~/.emacs.d/setup-web-mode.el")
 ;;(load "~/.emacs.d/setup-smartparens.el")
 
 ;; smartparens
