@@ -1,4 +1,6 @@
 ;; ruby
+(require 'rinari)
+
 (unless (package-installed-p 'inf-ruby)
   (package-install 'inf-ruby))
 
@@ -6,6 +8,9 @@
 (add-hook 'ruby-mode-hook 'company-mode)
 (add-hook 'ruby-mode-hook 'ruby-tools-mode)
 (add-hook 'ruby-mode-hook 'rinari-minor-mode)
+
+(add-hook 'feature-mode-hook 'rinari-minor-mode)
+(add-hook 'html-mode 'rinari-minor-mode)
 
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
