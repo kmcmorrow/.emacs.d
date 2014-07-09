@@ -61,6 +61,7 @@
 
 (require 'yasnippet)
 (yas-global-mode 1)
+(require 'dropdown-list)
 
 ;; ido-mode
 (setq ido-enable-flex-matching t)
