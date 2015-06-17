@@ -3,7 +3,7 @@
 (load custom-file 'noerror)
 
 ;; size and position
-(set-frame-height (selected-frame) 52) ; desktop
+(set-frame-height (selected-frame) 49) ; desktop
 ;;(set-frame-height (selected-frame) 34) ; laptop
 (set-frame-position (selected-frame) 80 0)
 
@@ -12,15 +12,16 @@
 (setq default-tab-width 2)
 (setq column-number-mode t)
 (setq scroll-error-top-bottom t)
+(setq-default indent-tabs-mode nil)
 
 ;(setq py-python-command "c:/Python27/python.exe")
 ;(setenv "PATH" (concat "~/npm/node_modules" (getenv "PATH")))
 
 (require 'package)
 (add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/"))
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
 ;; ido-mode
@@ -51,3 +52,7 @@
 (show-smartparens-global-mode t)
 
 (global-set-key [f5] 'revert-buffer)
+(global-set-key [f7] 'comment-region)
+(global-set-key [f8] 'uncomment-region)
+
+(global-whitespace-cleanup-mode t)
