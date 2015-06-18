@@ -14,6 +14,8 @@
 (setq scroll-error-top-bottom t)
 (setq-default indent-tabs-mode nil)
 
+(setq-default buffer-file-coding-system 'utf-8-unix)
+
 ;(setq py-python-command "c:/Python27/python.exe")
 ;(setenv "PATH" (concat "~/npm/node_modules" (getenv "PATH")))
 
