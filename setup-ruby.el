@@ -19,6 +19,8 @@
 (add-hook 'coffee-mode-hook 'rinari-minor-mode)
 (add-hook 'yaml-mode-hook 'rinari-minor-mode)
 
+(add-hook 'web-mode-hook 'ruby-tools-mode)
+
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))

@@ -3,20 +3,32 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(backup-directory-alist (quote (("." . "~/.saves"))))
  '(c-basic-offset 2)
- '(c-default-style (quote ((c-mode . "linux") (c++-mode . "linux") (java-mode . "java") (awk-mode . "awk") (other . "gnu"))))
+ '(c-default-style
+   (quote
+    ((c-mode . "linux")
+     (c++-mode . "linux")
+     (java-mode . "java")
+     (awk-mode . "awk")
+     (other . "gnu"))))
  '(column-number-mode t)
  '(css-indent-offset 2)
  '(custom-enabled-themes (quote (tsdh-dark)))
- '(custom-safe-themes (quote ("025354235e98db5e7fd9c1a74622ff53ad31b7bde537d290ff68d85665213d85" "6fe6ab4abe97a4f13533e47ae59fbba7f2919583f9162b440dd06707b01f7794" default)))
+ '(custom-safe-themes
+   (quote
+    ("025354235e98db5e7fd9c1a74622ff53ad31b7bde537d290ff68d85665213d85" "6fe6ab4abe97a4f13533e47ae59fbba7f2919583f9162b440dd06707b01f7794" default)))
  '(global-hl-line-mode t)
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
  '(help-at-pt-timer-delay 0.9)
  '(indent-tabs-mode nil)
  '(js2-allow-keywords-as-property-names nil)
  '(js2-basic-offset 2)
+ '(package-selected-packages
+   (quote
+    (yasnippet yaml-mode whitespace-cleanup-mode web-mode sml-mode smartparens smart-mode-line scss-mode ruby-tools ruby-block rubocop rspec-mode robe rinari minitest magit js2-mode js-comint haskell-mode flymake-ruby flymake-jshint flycheck feature-mode f dropdown-list company-inf-ruby coffee-mode auto-complete ace-jump-mode)))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scss-compile-at-save nil)
@@ -29,7 +41,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "outline" :slant normal :weight normal :height 113 :width normal))))
+ '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 113 :width normal))))
  '(flymake-errline ((t (:inherit default :background "magenta" :foreground "gray0"))))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face :foreground "slate gray"))))
  '(font-lock-comment-face ((t (:foreground "slate gray"))))
