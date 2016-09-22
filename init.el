@@ -3,7 +3,7 @@
 (load custom-file 'noerror)
 
 ;; size and position
-(set-frame-height (selected-frame) 49) ; desktop
+(set-frame-height (selected-frame) 52) ; desktop
 ;;(set-frame-height (selected-frame) 34) ; laptop
 (set-frame-position (selected-frame) 80 0)
 
