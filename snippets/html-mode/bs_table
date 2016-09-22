@@ -1,0 +1,17 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: bs_table
+# key: bs_table
+# binding: direct-keybinding
+# --
+<table class="table table-condensed$1">
+  <thead>
+    <tr>
+      <th>$2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$3</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: bs_well
+# key: bs_well
+# binding: direct-keybinding
+# --
+<div class="well well-sm">
+  $1
+</div>
