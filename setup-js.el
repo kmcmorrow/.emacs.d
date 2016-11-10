@@ -2,7 +2,8 @@
 (require 'flymake-jshint)
 (global-set-key [f10] 'flymake-goto-prev-error)
 (global-set-key [f11] 'flymake-goto-next-error)
-(setq js2-basic-offset 2)
+(setq-default js2-basic-offset 2)
+(setq-default js2-global-externs '("$" "setTimeout" "clearTimeout" "setInterval" "clearInterval"))
 
 (add-hook 'js2-mode-hook 'company-mode)
 
