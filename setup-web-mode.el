@@ -7,4 +7,13 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
+(defun web-mode-customization ()
+  "Hooks for Web mode"
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-enable-auto-pairing nil)
+  )
+(add-hook 'web-mode-hook 'web-mode-customization)

@@ -5,7 +5,7 @@
 ;; size and position
 (set-frame-height (selected-frame) 52) ; desktop
 ;;(set-frame-height (selected-frame) 34) ; laptop
-(set-frame-position (selected-frame) 80 0)
+(set-frame-position (selected-frame) 0 0)
 
 (setq visible-bell t)
 (setq inhibit-startup-screen t)
@@ -16,8 +16,9 @@
 
 (setq-default buffer-file-coding-system 'utf-8-unix)
 
-;(setq py-python-command "c:/Python27/python.exe")
-;(setenv "PATH" (concat "~/npm/node_modules" (getenv "PATH")))
+;; improve performance on Windows
+;; https://stackoverflow.com/questions/2007329/emacs-23-1-50-1-hangs-ramdomly-for-6-8-seconds-on-windows-xp/2008700#2008700
+(setq-default w32-get-true-file-attributes nil)
 
 (require 'package)
 (add-to-list 'package-archives
