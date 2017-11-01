@@ -13,6 +13,7 @@
 (setq column-number-mode t)
 (setq scroll-error-top-bottom t)
 (setq-default indent-tabs-mode nil)
+(setq c-basic-offset 2)
 
 (setq-default buffer-file-coding-system 'utf-8-unix)
 
