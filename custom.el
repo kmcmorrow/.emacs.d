@@ -25,10 +25,8 @@
  '(help-at-pt-timer-delay 0.9)
  '(indent-tabs-mode nil)
  '(js2-allow-keywords-as-property-names nil)
- '(js2-basic-offset 2)
- '(package-selected-packages
-   (quote
-    (yasnippet yaml-mode whitespace-cleanup-mode web-mode sml-mode smartparens smart-mode-line scss-mode ruby-tools ruby-block rubocop rspec-mode robe rinari minitest magit js2-mode js-comint haskell-mode flymake-ruby flymake-jshint flycheck feature-mode f dropdown-list company-inf-ruby coffee-mode auto-complete ace-jump-mode)))
+ '(js2-basic-offset 2 t)
+ '(package-selected-packages (quote (yard-mode flymake-ruby ruby-block f dropdown-list)))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scss-compile-at-save nil)
@@ -42,7 +40,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 113 :width normal))))
- '(flymake-errline ((t (:inherit default :background "magenta" :foreground "gray0"))))
+ '(flymake-errline ((t (:inherit default :background "magenta" :foreground "gray0"))) t)
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face :foreground "slate gray"))))
  '(font-lock-comment-face ((t (:foreground "slate gray"))))
  '(js2-error ((t (:underline (:color "red" :style wave)))))
