@@ -48,6 +48,7 @@
 (load "~/.emacs.d/setup-web-mode.el")
 (load "~/.emacs.d/setup-yasnippet.el")
 (load "~/.emacs.d/setup-haskell.el")
+(load "~/.emacs.d/setup-emmet.el")
 ;;(load "~/.emacs.d/setup-smartparens.el")
 
 ;; smartparens

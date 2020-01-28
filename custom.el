@@ -26,7 +26,9 @@
  '(indent-tabs-mode nil)
  '(js2-allow-keywords-as-property-names nil)
  '(js2-basic-offset 2 t)
- '(package-selected-packages (quote (yard-mode flymake-ruby ruby-block f dropdown-list)))
+ '(package-selected-packages
+   (quote
+    (emmet-mode yard-mode flymake-ruby ruby-block f dropdown-list)))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scss-compile-at-save nil)
