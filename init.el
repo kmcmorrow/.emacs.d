@@ -42,7 +42,7 @@
 (auto-fill-mode -1)
 
 (load "~/.emacs.d/setup-company.el")
-(load "~/.emacs.d/setup-js.el")
+;;(load "~/.emacs.d/setup-js.el")
 (load "~/.emacs.d/setup-ruby.el")
 (load "~/.emacs.d/setup-ace-jump-mode.el")
 (load "~/.emacs.d/setup-web-mode.el")

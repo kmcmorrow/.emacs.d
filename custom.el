@@ -25,10 +25,10 @@
  '(help-at-pt-timer-delay 0.9)
  '(indent-tabs-mode nil)
  '(js2-allow-keywords-as-property-names nil)
- '(js2-basic-offset 2 t)
+ '(js2-basic-offset 2)
  '(package-selected-packages
    (quote
-    (emmet-mode yard-mode flymake-ruby ruby-block f dropdown-list)))
+    (ac-emmet ace-jump-mode flycheck magit rinari robe scss-mode rspec-mode rubocop ruby-end ruby-tools smart-mode-line smartparens whitespace-cleanup-mode yaml-mode yasnippet web-mode company company-web emmet-mode yard-mode flymake-ruby ruby-block f dropdown-list)))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scss-compile-at-save nil)
