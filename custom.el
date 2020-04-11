@@ -6,7 +6,7 @@
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(backup-directory-alist (quote (("." . "~/.saves"))))
- '(c-basic-offset 2)
+ '(c-basic-offset 2 t)
  '(c-default-style
    (quote
     ((c-mode . "linux")
@@ -28,7 +28,7 @@
  '(js2-basic-offset 2)
  '(package-selected-packages
    (quote
-    (ac-emmet ace-jump-mode flycheck magit rinari robe scss-mode rspec-mode rubocop ruby-end ruby-tools smart-mode-line smartparens whitespace-cleanup-mode yaml-mode yasnippet web-mode company company-web emmet-mode yard-mode flymake-ruby ruby-block f dropdown-list)))
+    (ac-emmet ace-jump-mode flycheck magit rinari robe scss-mode rspec-mode rubocop ruby-tools smart-mode-line smartparens whitespace-cleanup-mode yaml-mode yasnippet web-mode company company-web emmet-mode yard-mode flymake-ruby ruby-block f dropdown-list)))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scss-compile-at-save nil)
