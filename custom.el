@@ -5,36 +5,33 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(backup-directory-alist (quote (("." . "~/.saves"))))
+ '(backup-directory-alist '(("." . "~/.saves")))
  '(c-basic-offset 2 t)
  '(c-default-style
-   (quote
-    ((c-mode . "linux")
+   '((c-mode . "linux")
      (c++-mode . "linux")
      (java-mode . "java")
      (awk-mode . "awk")
-     (other . "gnu"))))
+     (other . "gnu")))
  '(column-number-mode t)
  '(css-indent-offset 2)
- '(custom-enabled-themes (quote (tsdh-dark)))
+ '(custom-enabled-themes '(tsdh-dark))
  '(custom-safe-themes
-   (quote
-    ("025354235e98db5e7fd9c1a74622ff53ad31b7bde537d290ff68d85665213d85" "6fe6ab4abe97a4f13533e47ae59fbba7f2919583f9162b440dd06707b01f7794" default)))
+   '("025354235e98db5e7fd9c1a74622ff53ad31b7bde537d290ff68d85665213d85" "6fe6ab4abe97a4f13533e47ae59fbba7f2919583f9162b440dd06707b01f7794" default))
  '(global-hl-line-mode t)
- '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
+ '(help-at-pt-display-when-idle '(flymake-overlay) nil (help-at-pt))
  '(help-at-pt-timer-delay 0.9)
  '(indent-tabs-mode nil)
  '(js2-allow-keywords-as-property-names nil)
  '(js2-basic-offset 2)
  '(package-selected-packages
-   (quote
-    (ac-emmet ace-jump-mode flycheck magit rinari robe scss-mode rspec-mode rubocop ruby-tools smart-mode-line smartparens whitespace-cleanup-mode yaml-mode yasnippet web-mode company company-web emmet-mode yard-mode flymake-ruby ruby-block f dropdown-list)))
+   '(magit dash ac-emmet ace-jump-mode flycheck rinari robe scss-mode rspec-mode rubocop ruby-tools smart-mode-line smartparens whitespace-cleanup-mode yaml-mode yasnippet web-mode company company-web emmet-mode yard-mode flymake-ruby ruby-block f dropdown-list))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scss-compile-at-save nil)
  '(show-paren-mode t)
  '(sp-autoescape-string-quote nil)
- '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
+ '(text-mode-hook '(turn-on-auto-fill text-mode-hook-identify))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

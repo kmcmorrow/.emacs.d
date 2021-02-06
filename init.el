@@ -23,10 +23,12 @@
 (setq-default w32-get-true-file-attributes nil)
 
 (require 'package)
+;; (add-to-list 'package-archives
+;;              '("marmalade" . "https://marmalade-repo.org/packages/"))
+;; (add-to-list 'package-archives
+;;              '("melpa" . "https://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/"))
+             '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 ;; ido-mode
@@ -63,3 +65,6 @@
 (global-set-key [f8] 'uncomment-region)
 
 (global-whitespace-cleanup-mode t)
+
+(add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . web-mode))
