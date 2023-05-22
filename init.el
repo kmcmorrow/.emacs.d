@@ -68,3 +68,5 @@
 
 (add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . web-mode))
+
+(projectile-global-mode)
